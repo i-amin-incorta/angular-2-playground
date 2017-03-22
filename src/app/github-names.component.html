@@ -1,0 +1,16 @@
+<div class="github-names">
+  <form>
+    <div class="form-group">
+      <label for="name">Name</label>
+      <input #searchBox type="text" class="form-control" id="name" (keyup)="search(searchBox.value)"/>
+    </div>
+  </form>
+  <div class="user-list">
+    {{ searchKeyword | async }}
+    <ul>
+      <li *ngFor="let user of users | async">
+        {{user.login}}
+      </li>
+    </ul>
+  </div>
+</div>
